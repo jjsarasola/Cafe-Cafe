@@ -2,7 +2,7 @@
 Café-Café es una aplicación de escritorio para Windows escrita en C# que no permite que el sistema entre en suspensión o se bloquee la sesión del usuario, mediante la simulación de la presión de la tecla F15.
 
 ## Timer
-En la línea 63 es posible modificar el tiempo en milisegundos.
+En la línea 63 del archivo Form1.cs es posible modificar el tiempo en milisegundos del timer que dispara el evento de la tecla.
 ```
 timer1.Interval = 60000; //Un minuto
 ```
