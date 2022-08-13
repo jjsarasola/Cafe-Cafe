@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace CafeCafe
 {
@@ -60,7 +54,7 @@ namespace CafeCafe
 
         private void activar()
         {
-            timer1.Interval = 60000; //Un minuto
+            timer1.Interval = 6000; //Un minuto
             timer1.Start();
             this.Text = "Café-Café  --Activado--";
             this.notifyIcon1.Text = "Café-Café Activado";
@@ -78,12 +72,41 @@ namespace CafeCafe
             this.button1.Enabled = true;
         }
 
+        private void apagar(int minutos)
+        {
+            Process.Start("shutdown", $"/s /t {minutos * 60}"); // El argumento /s indica que es un apagado. El argumento /t indica el tiempo en segundos. 
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-    }
 
+        private void textBoxMinutos_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBoxMinutos.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Por favor ingrese solo números.");
+                textBoxMinutos.Text = textBoxMinutos.Text.Remove(textBoxMinutos.Text.Length - 1);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int minutos = int.Parse(textBoxMinutos.Text);
+            
+            if (minutos > 0)
+            {
+                MessageBox.Show($"El equipo se apagará en {minutos} minuto/s...");
+                this.Text = "Café-Café  --Apagado programado--";
+                this.notifyIcon1.Text = "Café-Café -Apagado programado-";
+                apagar(int.Parse(textBoxMinutos.Text));
+            } else {
+                MessageBox.Show("Ingrese un valor en minutos.");
+            }
+       
+        }
+    }
     public class SimuladorTecla
     //Esta clase tiene un método que simula que se presiona la tecla F15
     {

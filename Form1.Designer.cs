@@ -37,11 +37,15 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBoxMinutos = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(16, 70);
+            this.button1.Location = new System.Drawing.Point(13, 76);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 62);
@@ -52,7 +56,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(16, 136);
+            this.button2.Location = new System.Drawing.Point(13, 142);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(147, 63);
@@ -65,7 +69,7 @@
             // 
             this.flowLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flowLayoutPanel1.BackgroundImage")));
             this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(202, 64);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(202, 70);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(121, 114);
@@ -89,7 +93,7 @@
             // label2
             // 
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.label2.Location = new System.Drawing.Point(185, 184);
+            this.label2.Location = new System.Drawing.Point(185, 190);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 26);
@@ -102,13 +106,57 @@
             this.notifyIcon1.Text = "Café-Café";
             this.notifyIcon1.Visible = true;
             // 
+            // label3
+            // 
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.label3.Location = new System.Drawing.Point(13, 225);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(222, 26);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Activar apagado automático";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(85, 260);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 27);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Activar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // textBoxMinutos
+            // 
+            this.textBoxMinutos.Location = new System.Drawing.Point(32, 265);
+            this.textBoxMinutos.Name = "textBoxMinutos";
+            this.textBoxMinutos.Size = new System.Drawing.Size(40, 20);
+            this.textBoxMinutos.TabIndex = 7;
+            this.textBoxMinutos.Text = "0";
+            this.textBoxMinutos.TextChanged += new System.EventHandler(this.textBoxMinutos_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.label4.Location = new System.Drawing.Point(13, 247);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(222, 26);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "- Minutos:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(98)))), ((int)(((byte)(47)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(341, 206);
+            this.ClientSize = new System.Drawing.Size(341, 300);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBoxMinutos);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.button2);
@@ -126,6 +174,7 @@
             this.TransparencyKey = System.Drawing.Color.Aquamarine;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -138,6 +187,10 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBoxMinutos;
+        private System.Windows.Forms.Label label4;
     }
 }
 
